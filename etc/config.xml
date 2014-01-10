@@ -1,0 +1,46 @@
+<config>
+    <modules>
+        <Vivant_CmsProducts>
+            <version>0.1.0</version>
+        </Vivant_CmsProducts>
+    </modules>
+    <global>
+        
+		<rewrite>
+            <vivant_cmsproducts_checkout_cart>
+                <from><![CDATA[#^/checkout/cart/addmultiple/.*$#]]></from>
+                <to>/multiadd/checkout_cart/addmultiple/</to>
+            </vivant_cmsproducts_checkout_cart> 
+        </rewrite>
+		
+		<blocks>
+            <vivant_cmsproducts>
+                <class>Vivant_CmsProducts_Block</class>
+            </vivant_cmsproducts>
+        </blocks>
+        
+		<models>
+            <vivant_cmsproducts>
+                <class>Vivant_CmsProducts_Model</class>
+            </vivant_cmsproducts>
+        </models>
+		
+	   <helpers>
+            <multiadd>
+                <class>Vivant_CmsProducts_Helper</class>
+            </multiadd>
+        </helpers>
+		
+    </global>
+	 <frontend>
+        <routers>
+            <perpetual_multiadd>
+                <use>standard</use>
+                <args>
+                    <module>Vivant_CmsProducts</module>
+                    <frontName>multiadd</frontName>
+                </args>
+            </perpetual_multiadd>
+        </routers>
+    </frontend>
+</config>
